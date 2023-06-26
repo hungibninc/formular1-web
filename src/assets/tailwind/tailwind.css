@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Helvetica';
+      src: url('../fonts/Helvetica/Helvetica.ttf');
+  }
+  @font-face {
+      font-family: 'Helvetica-Light';
+      src: url('../fonts/Helvetica/Helvetica-Light.ttf');
+  }
+  @font-face {
+      font-family: 'Helvetica-Bold';
+      src: url('../fonts/Helvetica/Helvetica-Bold.ttf');
+  }
+
+  .Helvetica {
+		@apply font-hNormal;
+	}
+	.Helvetica-Light {
+		@apply font-hLight;
+	}
+	.Helvetica-Bold {
+		@apply font-hBold;
+	}
+
+  body{
+    @apply font-normal text-sm bg-grey m-5 text-black;
+  }
+
+  h1,.h1 {
+		@apply font-hBold md:text-5xl text-xl leading-tight;
+	}
+	h2,.h1 {
+		@apply font-hBold md:text-4xl text-xl leading-tight;
+	}
+	h3,.h3 {
+		@apply font-hBold md:text-3xl text-xl leading-tight;
+	}
+	h4,.h4 {
+		@apply font-hBold text-2xl leading-snug;
+	}
+	h5,.h5 {
+		@apply font-hBold text-xl leading-normal;
+	}
+	h6,.h6 {
+		@apply font-hBold text-base leading-normal;
+	}
+	a,.a {
+		@apply underline;
+	}
+}
+
+@layer utilities {
+  .container {
+    @apply mx-auto max-w-screen-2xl p-8 bg-white shadow-md;
+  }
+}
+
