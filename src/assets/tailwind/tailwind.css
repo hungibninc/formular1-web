@@ -31,16 +31,16 @@
   }
 
   h1,.h1 {
-		@apply font-hBold md:text-5xl text-xl leading-tight;
-	}
-	h2,.h1 {
-		@apply font-hBold md:text-4xl text-xl leading-tight;
-	}
-	h3,.h3 {
 		@apply font-hBold md:text-3xl text-xl leading-tight;
 	}
+	h2,.h2 {
+		@apply font-hBold md:text-2xl text-xl leading-tight;
+	}
+	h3,.h3 {
+		@apply font-hBold text-xl leading-tight;
+	}
 	h4,.h4 {
-		@apply font-hBold text-2xl leading-snug;
+		@apply font-hBold text-xl leading-snug;
 	}
 	h5,.h5 {
 		@apply font-hBold text-xl leading-normal;

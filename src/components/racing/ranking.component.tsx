@@ -1,12 +1,15 @@
+import { MouseEvent } from 'react';
 import moment from 'moment';
-import { Ranking } from '../../App';
+import { Ranking } from '../../@types/common';
+import './racing.styles.scss';
 
-type RacingListProps = {
+type RankingListProps = {
   ranking: Ranking[];
+  onClickHandler: (grand_prix: string) => void;
 };
 
-const RacingList = ({ ranking }: RacingListProps) => {
-  console.log(ranking);
+const RankingList = ({ ranking, onClickHandler }: RankingListProps) => {
+  console.log('RankingList ', ranking);
   return (
     <table className='results'>
       <thead>
@@ -24,7 +27,10 @@ const RacingList = ({ ranking }: RacingListProps) => {
           return (
             <tr key={key}>
               <td className='dark bold'>
-                <a href='#' className='dark bold ArchiveLink'>
+                <a
+                  onClick={() => onClickHandler(item.grand_prix)}
+                  className='dark bold ArchiveLink'
+                >
                   {item.grand_prix}
                 </a>
               </td>
@@ -58,4 +64,4 @@ const RacingList = ({ ranking }: RacingListProps) => {
   );
 };
 
-export default RacingList;
+export default RankingList;

@@ -1,0 +1,33 @@
+.results {
+  @apply w-full;
+
+  tr th {
+    @apply px-3 py-5 text-left;
+  }
+
+  tr td {
+    @apply px-3 py-5;
+
+    &.hide-for-mobile {
+      @apply hidden md:table-cell;
+    }
+
+    &.hide-for-tablet {
+      @apply hidden lg:table-cell;
+    }
+  }
+
+  span {
+    &.hide-for-mobile {
+      @apply hidden md:inline-block;
+    }
+  
+    &.hide-for-tablet {
+      @apply hidden lg:inline-block;
+    }
+  }
+
+  .hide-for-desktop {
+    @apply md:hidden;
+  }
+}

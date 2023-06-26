@@ -1,31 +1,10 @@
 .filter {
-  @apply flex flex-col md:flex-row justify-center gap-3;
+  @apply flex flex-col md:flex-row justify-center gap-3 mb-10;
 }
 
-.content{
-  @apply mt-10;
+.content {
 }
 
-.results {
-  @apply mb-10 w-full;
-
-  tr th {
-    @apply px-3 py-5 text-left
-  }
-
-  tr td {
-    @apply px-3 py-5
-  }
-
-  .hide-for-mobile {
-    @apply hidden md:inline-block
-  }
-
-  .hide-for-tablet {
-    @apply hidden lg:inline-block
-  }
-
-  .hide-for-desktop {
-    @apply md:hidden
-  }
+.title {
+  @apply mb-5;
 }

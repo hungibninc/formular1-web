@@ -1,7 +1,17 @@
-import { useEffect, useState } from 'react';
-import { getGrandPrix } from '../../utils/data.utils';
-import { Option, GrandPrix } from '../../@types/common';
+import { ChangeEvent } from 'react';
+import { Option } from '../../@types/common';
 import FilterOption from '../filter-option/filter-option.components';
+
+export enum FILTER_SELECT_ID {
+  SEL_YEAR = 'selYear',
+  SEL_TYPE = 'selType',
+  SEL_NAME = 'selName',
+}
+
+const yearOptions: Option[] = [
+  { label: '2023', value: '2023' },
+  { label: '2022', value: '2022' },
+];
 
 const typeOptions: Option[] = [
   { label: 'Races', value: 'races' },
@@ -9,38 +19,43 @@ const typeOptions: Option[] = [
   { label: 'Teams', value: 'team' },
 ];
 
-const Header = () => {
-  const [nameOption, setnameOption] = useState<Option[]>([]);
+type HeaderProps = {
+  nameOption: Option[];
+  nameDefaultValue: string;
+  onChangeHandler: (event: ChangeEvent<HTMLSelectElement>) => void;
+};
 
-  useEffect(() => {
-    //  get list Grand Prix
-    const fetchGrandPrix = async () => {
-      const data = await getGrandPrix<GrandPrix[]>();
-      const grandprix = data.map((item) => {
-        return { label: item.grand_prix, value: item.grand_prix };
-      });
-      setnameOption(grandprix);
-    };
-    fetchGrandPrix();
-  }, []);
-
+const Header = ({
+  nameOption,
+  nameDefaultValue,
+  onChangeHandler,
+}: HeaderProps) => {
   return (
     <div className='filter'>
       <div className='mb-2'>
-        <select data-te-select-init data-te-select-option-height='52'>
-          <option value='1' data-te-select-secondary-text='Season 2023'>
-            2023
-          </option>
-          <option value='2' data-te-select-secondary-text='Season 2022'>
-            2022
-          </option>
-        </select>
+        <FilterOption
+          id={FILTER_SELECT_ID.SEL_YEAR}
+          allOption={false}
+          options={yearOptions}
+          onChangeHandler={onChangeHandler}
+        />
       </div>
       <div className='mb-2'>
-        <FilterOption allOption={false} options={typeOptions} />
+        <FilterOption
+          id={FILTER_SELECT_ID.SEL_TYPE}
+          allOption={false}
+          options={typeOptions}
+          onChangeHandler={onChangeHandler}
+        />
       </div>
       <div className='mb-2'>
-        <FilterOption allOption={true} options={nameOption} />
+        <FilterOption
+          id={FILTER_SELECT_ID.SEL_NAME}
+          allOption={true}
+          options={nameOption}
+          defaultValue={nameDefaultValue}
+          onChangeHandler={onChangeHandler}
+        />
       </div>
     </div>
   );
