@@ -7,10 +7,9 @@ By connecting to this API to retrieve the data.
 https://formula1-api-production.up.railway.app/api/
 
 ## Preview - [Live Demo](https://storied-profiterole-bc275d.netlify.app/)
-
-<img src="assets/race-result.png" width="600"/>
-<img src="assets/driver-standing.png" width="600"/>
-<img src="assets/constructor-standing.png" width="600"/>
+<img src="./src/assets/race-result.png" width="600"/>
+<img src="./src/assets/driver-standing.png" width="600"/>
+<img src="./src/assets/constructor-standing.png" width="600"/>
 
 ## Run locally
 
