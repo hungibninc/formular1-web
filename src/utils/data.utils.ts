@@ -1,6 +1,6 @@
 //  we're essentially saying, getData is going to receive some type T, this type T is what you're going to return from this function inside of a promise.
 
-const URL_API = 'http://localhost:3000/';
+const URL_API = 'https://formula1-api-production.up.railway.app/';
 export const now = new Date();
 
 export const getData = async <T>(url: string): Promise<T> => {
@@ -62,7 +62,6 @@ export const getTeamStanding = async <T>(
     (name
       ? 'standings/team?year=' + year + '&team=' + name
       : 'standings/team?year=' + year);
-  console.log(url);
   const response = await fetch(url);
   return await response.json();
 };

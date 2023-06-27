@@ -7,7 +7,6 @@ type RankingGrandPrixListProps = {
 const RankingGrandPrixList = ({
   rankingGrandPrix,
 }: RankingGrandPrixListProps) => {
-  console.log('RankingGrandPrixList ', rankingGrandPrix);
   return (
     rankingGrandPrix.length && (
       <table className='results'>

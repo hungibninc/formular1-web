@@ -1,12 +1,13 @@
 .filter {
-  @apply flex flex-col md:flex-row justify-center gap-3 mb-10;
+  @apply flex flex-col md:flex-row justify-center gap-3 p-10 bg-white my-4 md:my-0;
 }
 
 .content {
+  @apply bg-white px-0 md:px-10 -mx-5 md:mx-0
 }
 
 .title {
-  @apply mb-5 capitalize;
+  @apply mb-5 capitalize pt-10 md:pt-0 px-3;
 }
 
 .dark {
@@ -21,7 +22,15 @@
   @apply w-full;
 
   tr th {
-    @apply px-3 py-5 text-left;
+    @apply px-3 py-5 text-left uppercase;
+
+    &.hide-for-mobile {
+      @apply hidden md:table-cell;
+    }
+
+    &.hide-for-tablet {
+      @apply hidden lg:table-cell;
+    }
   }
 
   tr td {
@@ -35,6 +44,8 @@
       @apply hidden lg:table-cell;
     }
   }
+
+  tr:nth-child(even) {background-color: #f4f4f4;}
 
   span {
     &.hide-for-mobile {

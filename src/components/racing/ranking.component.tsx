@@ -7,7 +7,6 @@ type RankingListProps = {
 };
 
 const RankingList = ({ ranking, onClickHandler }: RankingListProps) => {
-  console.log('RankingList ', ranking);
   return (
     <table className='results'>
       <thead>

@@ -9,7 +9,6 @@ const DriverStandingList = ({
   driverstanding,
   onClickHandler,
 }: DriverStandingListProps) => {
-  console.log('DriverStandingList ', driverstanding);
   return (
     <table className='results'>
       <thead>

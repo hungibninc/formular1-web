@@ -8,7 +8,6 @@ type DriverStandingDetailListProps = {
 const DriverStandingDetailList = ({
   driverstandingdetail,
 }: DriverStandingDetailListProps) => {
-  console.log('DriverStandingDetailList ', driverstandingdetail);
   return (
     <table className='results'>
       <thead>
@@ -30,11 +29,7 @@ const DriverStandingDetailList = ({
               <td className='dark bold'>
                 {moment(item.racing_date).format('DD MMM YYYY')}
               </td>
-              <td className='hide-for-mobile'>
-                <a href='#' className='grey semi-bold uppercase ArchiveLink'>
-                  {item.team}
-                </a>
-              </td>
+              <td className='hide-for-mobile'>{item.team}</td>
               <td className='dark'>{item.position}</td>
 
               <td className='dark bold'>{item.points}</td>

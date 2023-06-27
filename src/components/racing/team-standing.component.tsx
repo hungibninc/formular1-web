@@ -9,7 +9,6 @@ const TeamStandingList = ({
   teamstanding,
   onClickHandler,
 }: TeamStandingListProps) => {
-  console.log('TeamStandingList ', teamstanding);
   return (
     <table className='results'>
       <thead>
@@ -17,7 +16,7 @@ const TeamStandingList = ({
           <th>
             <abbr title='Position'>Pos</abbr>
           </th>
-          <th>Taem</th>
+          <th>Team</th>
           <th>
             <abbr title='Points'>PTS</abbr>
           </th>

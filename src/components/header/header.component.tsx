@@ -33,7 +33,7 @@ const Header = ({
 }: HeaderProps) => {
   return (
     <div className='filter'>
-      <div className='mb-2'>
+      <div className='mb-2 filteryear'>
         <FilterOption
           id={FILTER_SELECT_ID.SEL_YEAR}
           allOption={false}
@@ -41,7 +41,7 @@ const Header = ({
           onChangeHandler={onChangeHandler}
         />
       </div>
-      <div className='mb-2'>
+      <div className='mb-2 filtertype'>
         <FilterOption
           id={FILTER_SELECT_ID.SEL_TYPE}
           allOption={false}

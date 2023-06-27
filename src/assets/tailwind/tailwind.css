@@ -27,7 +27,7 @@
 	}
 
   body{
-    @apply font-normal text-sm bg-grey m-5 text-black;
+    @apply font-normal text-sm bg-grey text-black;
   }
 
   h1,.h1 {
@@ -55,7 +55,7 @@
 
 @layer utilities {
   .container {
-    @apply mx-auto max-w-screen-2xl p-8 bg-white shadow-md;
+    @apply mx-auto max-w-screen-2xl;
   }
 }
 

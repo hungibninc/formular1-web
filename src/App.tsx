@@ -20,6 +20,7 @@ import {
   DriverStandingDetail,
   Team,
   TeamStanding,
+  TeamStandingDetail,
 } from './@types/common';
 import Header, { FILTER_SELECT_ID } from './components/header/header.component';
 import RankingList from './components/racing/ranking.component';
@@ -27,9 +28,9 @@ import RankingGrandPrixList from './components/racing/ranking-grandprix.componen
 import DriverStandingList from './components/racing/driver-standing.component';
 import DriverStandingDetailList from './components/racing/driver-standing-detail.component';
 import TeamStandingList from './components/racing/team-standing.component';
+import TeamDetailStandingList from './components/racing/team-standing-detail.component';
 
 function App() {
-  console.log('Reder/Rerender App ===============');
   const currentYear = now.getFullYear();
   const [title, setTitle] = useState('');
   const [typeResult, setTypeResult] = useState('ranking');
@@ -44,6 +45,9 @@ function App() {
   >([]);
 
   const [teamStanding, setTeamStanding] = useState<TeamStanding[]>([]);
+  const [teamStandingDetail, setTeamStandingDetail] = useState<
+    TeamStandingDetail[]
+  >([]);
 
   const [filterYear, setFilterYear] = useState(currentYear);
   const [filterType, setFilterType] = useState('races');
@@ -52,8 +56,6 @@ function App() {
   const [nameDefaultValue, setNameDefaultValue] = useState('');
 
   useEffect(() => {
-    console.log('render/re-render Ranking', filterYear, filterType, filterName);
-
     //  get list Filter name of GrandPrix/Driver/Team
     const fetchGrandPrixName = async () => {
       const data = await getGrandPrix<GrandPrix[]>(filterYear);
@@ -75,7 +77,6 @@ function App() {
     //  get list Filter name of Team
     const fetctTeamName = async () => {
       const data = await getTeam<Team[]>(filterYear);
-      console.log(data);
       const team = data.map((item) => {
         return { label: item.team, value: item.team };
       });
@@ -139,7 +140,6 @@ function App() {
       const title = filterYear + ' Constructor Standings';
       setTitle(title);
       const data = await getTeamStanding<TeamStanding[]>(filterYear);
-      console.log(data);
       setTeamStanding(data);
       setTypeResult('teamstanding');
     };
@@ -148,12 +148,12 @@ function App() {
     const fetchTeamStandingDetail = async () => {
       const title = filterYear + ' Constructor Standings: ' + filterName;
       setTitle(title);
-      /* const data = await getTeamStanding<TeamStanding[]>(
+      const data = await getTeamStanding<TeamStandingDetail[]>(
         filterYear,
         filterName
       );
-      setTeamStanding(data);
-      setTypeResult('teamstanding'); */
+      setTeamStandingDetail(data);
+      setTypeResult('teamstandingdetail');
     };
 
     if (filterType == 'races') {
@@ -172,15 +172,17 @@ function App() {
     const searchFieldId = event.target.id;
     const searchFieldValue = event.target.value;
     if (searchFieldId == FILTER_SELECT_ID.SEL_YEAR) {
-      setFilterName('all');
       setNameDefaultValue('all');
+      setFilterName('all');
       setFilterYear(parseInt(searchFieldValue));
     } else if (searchFieldId == FILTER_SELECT_ID.SEL_TYPE) {
-      setFilterName('all');
       setNameDefaultValue('all');
+      setFilterName('all');
       setFilterType(searchFieldValue.toLocaleLowerCase());
-    } else if (searchFieldId == FILTER_SELECT_ID.SEL_NAME)
+    } else if (searchFieldId == FILTER_SELECT_ID.SEL_NAME) {
+      setNameDefaultValue(searchFieldValue);
       setFilterName(searchFieldValue.toLocaleLowerCase());
+    }
   };
 
   const onClickGrandPrix = (grand_prix: string) => {
@@ -246,6 +248,13 @@ function App() {
             />
           </div>
         )}
+
+        {typeResult == 'teamstandingdetail' &&
+          teamStandingDetail.length > 0 && (
+            <div>
+              <TeamDetailStandingList teamstandingdetail={teamStandingDetail} />
+            </div>
+          )}
       </div>
     </div>
   );

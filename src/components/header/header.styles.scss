@@ -1,3 +1,6 @@
+.filteryear, .filtertype {
+  @apply w-full md:w-32;
+}
 .filtername {
-  @apply w-[300px]
+  @apply w-full md:w-[300px];
 }
