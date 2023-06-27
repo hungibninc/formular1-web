@@ -1,5 +1,18 @@
+export type Option = {
+  label: string;
+  value: string;
+};
+
 export type GrandPrix = {
   grand_prix: string;
+};
+
+export type Driver = {
+  driver: string;
+};
+
+export type Team = {
+  team: string;
 };
 
 export type Ranking = {
@@ -21,7 +34,28 @@ export type RankingGrandPrix = {
   points: string;
 };
 
-export type Option = {
-  label: string;
-  value: string;
+export type DriverStanding = {
+  driver: string;
+  nationality: string;
+  team: string;
+  points: string;
+};
+
+export type DriverStandingDetail = {
+  grand_prix: string;
+  racing_date: string;
+  team: string;
+  position: string;
+  points: string;
+};
+
+export type TeamStanding = {
+  team: string;
+  points: string;
+};
+
+export type TeamStandingDetail = {
+  grand_prix: string;
+  racing_date: string;
+  points: string;
 };

@@ -30,7 +30,12 @@ const FilterOption = ({
   }, [id, defaultValue]);
 
   return (
-    <select data-te-select-init onChange={onChangeHandler} id={id}>
+    <select
+      data-te-select-init
+      onChange={onChangeHandler}
+      id={id}
+      className='capitalize'
+    >
       {allOption && <option value='all'>All</option>}
       {options.map((option, key) => (
         <option key={key} value={option.value}>

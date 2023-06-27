@@ -1,5 +1,4 @@
 import { RankingGrandPrix } from '../../@types/common';
-import './racing.styles.scss';
 
 type RankingGrandPrixListProps = {
   rankingGrandPrix: RankingGrandPrix[];

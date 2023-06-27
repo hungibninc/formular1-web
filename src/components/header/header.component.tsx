@@ -1,6 +1,7 @@
 import { ChangeEvent } from 'react';
 import { Option } from '../../@types/common';
 import FilterOption from '../filter-option/filter-option.components';
+import './header.styles.scss';
 
 export enum FILTER_SELECT_ID {
   SEL_YEAR = 'selYear',
@@ -48,7 +49,7 @@ const Header = ({
           onChangeHandler={onChangeHandler}
         />
       </div>
-      <div className='mb-2'>
+      <div className='mb-2 filtername'>
         <FilterOption
           id={FILTER_SELECT_ID.SEL_NAME}
           allOption={true}

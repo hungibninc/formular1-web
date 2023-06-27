@@ -1,7 +1,5 @@
-import { MouseEvent } from 'react';
 import moment from 'moment';
 import { Ranking } from '../../@types/common';
-import './racing.styles.scss';
 
 type RankingListProps = {
   ranking: Ranking[];

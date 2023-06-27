@@ -49,7 +49,7 @@
 		@apply font-hBold text-base leading-normal;
 	}
 	a,.a {
-		@apply underline;
+		@apply no-underline cursor-pointer;
 	}
 }
 

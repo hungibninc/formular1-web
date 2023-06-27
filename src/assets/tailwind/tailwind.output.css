@@ -512,11 +512,13 @@ h6,.h6 {
 }
 
 a,.a {
-  text-decoration-line: underline;
+  cursor: pointer;
+  text-decoration-line: none;
 }
 
 .\!a {
-  text-decoration-line: underline;
+  cursor: pointer;
+  text-decoration-line: none;
 }
 
 *, ::before, ::after {
@@ -877,10 +879,6 @@ a,.a {
 
 .mb-2\.5 {
   margin-bottom: 0.625rem;
-}
-
-.mb-20 {
-  margin-bottom: 5rem;
 }
 
 .mb-\[10px\] {
@@ -2149,6 +2147,10 @@ a,.a {
   text-transform: uppercase;
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
 .normal-case {
   text-transform: none;
 }
@@ -2600,7 +2602,8 @@ a,.a {
 }
 
 .target\:a:target {
-  text-decoration-line: underline;
+  cursor: pointer;
+  text-decoration-line: none;
 }
 
 .selection\:bg-transparent *::-moz-selection {
