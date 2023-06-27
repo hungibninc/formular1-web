@@ -6,6 +6,11 @@ By connecting to this API to retrieve the data.
 
 https://formula1-api-production.up.railway.app/api/
 
+## Features
+- List the race results by year, driver.
+- List the results of the drivers leading in each race or the results of one driver across all races
+- List the results of the participating teams, the results of one team across all races.
+
 ## Preview - [Live Demo](https://storied-profiterole-bc275d.netlify.app/)
 <img src="./src/assets/race-result.png" width="600"/>
 <img src="./src/assets/driver-standing.png" width="600"/>
